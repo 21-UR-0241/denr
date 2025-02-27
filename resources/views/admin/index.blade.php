@@ -40,7 +40,7 @@
             <label for="email">Username</label>
             <input type="text" name="username" id="username" class = "form-control" placeholder="Ex: admin" required><br>
             <label for="password">Password</label>
-            <input type = "password" name="myInput" id="myInput" class = "form-control" placeholder="Ex: admin123" required>
+            <input type = "password" name="password" id="password" class = "form-control" placeholder="Ex: admin123" required>
             <input type="checkbox" onclick="myFunction()" style="text-align: left; margin-right: 10px; "><label style="font-size: 12px; margin-bottom: 40px;">Show Password</label>
 <button type = "submit" name = "submit" class="form-control">Login</button>
         
@@ -72,7 +72,8 @@
     swal(
     {
     
-      title: "Successfully logged in",
+      title: "Successful",
+      text: "{{ session('success') }}",
                 icon: "{{ asset('assets/images/success.svg') }}",
           button: "Proceed"
     }).then(function() {
@@ -84,7 +85,7 @@ window.location = "{{ route('login') }}";
 <script>
   
 function myFunction() {
-  var x = document.getElementById("myInput");
+  var x = document.getElementById("password");
   if (x.type === "password") {
     x.type = "text";
   } else {

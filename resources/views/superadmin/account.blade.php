@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.navbarSuperadmin')
 @section('content')
 
 
@@ -30,7 +30,7 @@
                 <th>ID</th>
                 <th>Username</th>
                 <th>Role</th>
-                <th>Password</th>
+                <!-- <th>Password</th> -->
                 <th>Actions</th>
             </tr>
         </thead>
@@ -40,12 +40,12 @@
             <td>{{ $acc->id}}</td>
             <td>{{ $acc->username }}</td>
             <td>{{ $acc->role}}</td>
-            <td>{{$acc->password}}</td>
+            <!-- <td>{{$acc->password}}</td> -->
             
             <td> 
                 <div class="actions">
                 <a href="#" class="edit"><i class="material-icons">&#xE254;</i></a>
-                <a href="{{ route('deletemsa') }}" class="delete-confirm" data-url="{{ route('deletemsa') }}">
+                <a href="" class="delete-confirm" data-url="">
     <i class="material-icons">&#xe149;</i>
 </a>
 
@@ -64,7 +64,7 @@
 <div class="form-popup" id="myForm">
   <form action="{{ route('createAccount') }}" class="form-container" method="POST">
     @csrf
-    <h1>ADD APPLICANT</h1>
+    <h1>ADD ACCOUNT</h1>
 
     <label for="username">Username</label>
     <input type="text" placeholder="Username" name="username" required><br>
@@ -75,8 +75,8 @@
     <label for="role">Role (Super Admin/Admin)</label>
     <select name="role">
     <option selected disabled>Select Role</option>
-    <option value="superadmin">Super Admin</option>
-    <option value="admin">Admin</option>
+    <option value="Superadmin">Super Admin</option>
+    <option value="Admin">Admin</option>
     </select><br>
 
 

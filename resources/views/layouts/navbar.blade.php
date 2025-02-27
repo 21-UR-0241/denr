@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DENR</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('assets/images/denr.webp') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/msa.css') }}">
@@ -27,7 +28,7 @@
                 <h4 class="subtitile">CENRO</h4>
                 </div>
                 <ul>
-                    <a href="/login">HOME</a>
+                    <a href="/admin/dashboard">HOME</a>
                     <a href="/fpa">FPA</a>
                     <a href="/msa">MSA</a>
                     <a href="/rfpa">RFPA</a>
@@ -52,11 +53,17 @@
                 
             <div class = "dropdown-accounts">
             <i class="ri-user-3-fill"></i>
-            <a href="" class = "account-button">ACCOUNT</a>
-            <div class = "accounts-content">
-                <a href="/account">Manage Accounts</a>
-                <a href="">Logout</a>
-            </div>
+            <a href="" class = "account-button">{{ Auth::user()->username }}</a>
+            <div class="accounts-content">
+    <!-- <a href="/account">Manage Accounts</a> -->
+    <!-- Logout Button -->
+    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+</div>
+
+<!-- Logout Form (hidden) -->
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
             
             </div>
             

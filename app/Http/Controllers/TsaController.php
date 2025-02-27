@@ -13,7 +13,7 @@ class TsaController extends Controller
     public function tsa(){
         $tsadata = tsa::all();
         
-        return view('tsa', compact('tsadata'));
+        return view('admin.tsa', compact('tsadata'));
     }
 
     public function addtsa(Request $request)

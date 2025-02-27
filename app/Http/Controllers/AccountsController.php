@@ -18,17 +18,30 @@ class AccountsController extends Controller
             
         }
 
-        return view('account', compact('accountData'));
+        return view('superadmin.account', compact('accountData'));
     }
 
     public function createAccount(Request $request){
         
-        $username = $request->input('username');
-        $password = $request->input('password'); 
-        $role = $request->input('role');
-        $data=array('username'=>$username,"password"=>$password,"role"=>$role);
-        DB::table('users')->insert($data);
-       
-        return back();
+          // Retrieve user input
+    $username = $request->input('username');
+    $password = $request->input('password');
+    $role = $request->input('role');
+
+    // Hash the password before saving it
+    $hashedPassword = Hash::make($password);
+
+    // Prepare the data for insertion
+    $data = [
+        'username' => $username,
+        'password' => $hashedPassword,
+        'role' => $role,
+    ];
+
+    // Insert the data into the 'users' table
+    DB::table('users')->insert($data);
+
+    // Redirect back to the previous page (or to a success page)
+    return back()->with('success', 'Account created successfully!');
     }
 }

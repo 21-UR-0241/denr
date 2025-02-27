@@ -81,7 +81,10 @@
             @if(Session::has('success'))
             <script>
                 swal({
-                    title: "Success!",
+                    title: "Successful",
+                    text: "{{ session('success') }}",
+                icon: "{{ asset('assets/images/success.svg') }}",
+          button: "Proceed"
                 })
                 </script>
                 @endif

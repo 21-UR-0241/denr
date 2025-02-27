@@ -364,6 +364,14 @@
     background: #f1f1f1;
   }
 
+  input[type=date]{
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background: #f1f1f1;
+    border: none;
+  }
+
  select {
     border-radius: 5px;
     width: 95%;

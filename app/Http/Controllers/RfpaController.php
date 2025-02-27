@@ -11,7 +11,7 @@ class RfpaController extends Controller
     public function rfpa(){
         $rfpadata = Rfpa::all();
         
-        return view('rfpa', compact('rfpadata'));
+        return view('admin.rfpa', compact('rfpadata'));
     }
     public function addrfpa(Request $request)
     {

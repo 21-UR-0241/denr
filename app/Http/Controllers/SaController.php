@@ -13,7 +13,7 @@ class SaController extends Controller
     public function sa(){
         $sadata = sa::all();
         
-        return view('sa', compact('sadata'));
+        return view('admin.sa', compact('sadata'));
     }
 
     public function addsa(Request $request)

@@ -12,7 +12,7 @@ class SpController extends Controller
     public function sp(){
         $spdata = sp::all();
         
-        return view('sp', compact('spdata'));
+        return view('admin.sp', compact('spdata'));
     }
 
     public function addsp(Request $request)

@@ -15,7 +15,7 @@ class MsaController extends Controller
     public function msa(){
         $msadata = msa::all();
         
-        return view('msa', compact('msadata'));
+        return view('admin.msa', compact('msadata'));
     }
 
     public function addmsa(Request $request)
